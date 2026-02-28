@@ -100,3 +100,5 @@ db.run(`
         PRIMARY KEY (musica_id, artista_id)
     );
 `);
+
+module.exports = db;

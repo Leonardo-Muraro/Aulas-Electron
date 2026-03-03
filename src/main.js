@@ -2,7 +2,8 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const { eventNames } = require('node:cluster');
 const path = require('node:path')
 const sqlite = require('sqlite3').verbose();
-const serviceEstilos = require('./service/serviceEstilos')
+const registerEstiloHandler = require("./handlers/handlerEstilo");
+const registerArtistaHandler = require('./handlers/handlerArtista');
  
 const db = new sqlite.Database(
     path.resolve('database', 'loja_musica.db'),
@@ -82,28 +83,7 @@ const createIpcMain = () => {
     }
   })
 
-  // É necessário passar "event" como um dos parâmetros pois a função handle armazena dados do evento nessa variável, que podem ser úteis depois.
-  ipcMain.handle("lojaMusica:estilo:criar", async (event, descricao) =>  {
-    //Estou passando a descrição pois exigi ela na criação do estilo
-    //Estou retornando {`id: this.lastID, descricao`} dessa maneira, retorno todo o objeto ao front 
-    return  await serviceEstilos.criar(descricao)
-  })
-
-  ipcMain.handle("lojaMusica:estilo:listar", async (event) => {
-    return await serviceEstilos.listar()
-  })
-
-  ipcMain.handle(`lojaMusica:estilo:excluir`, async (event, id) => {
-
-    return await serviceEstilos.excluir(id)
-  })
-
-  ipcMain.handle("lojaMusica:estilo:editar", async (event, {id, descricao}) => {
-
-    return await serviceEstilos.editar(id, descricao)
-  })
 }
-
 /*
 Inicializa o App Electron
 */  
@@ -111,5 +91,7 @@ app.whenReady().then(() => {
   // E quando estiver pronto, registra as funções do backend e cria a janela.
   createIpcMain()
   createWindow()
+  registerEstiloHandler();
+  registerArtistaHandler(); 
 })
 

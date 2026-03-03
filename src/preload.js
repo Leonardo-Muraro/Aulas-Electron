@@ -46,6 +46,17 @@ contextBridge.exposeInMainWorld("lojaMusica", {
         listar: () => ipcRenderer.invoke("lojaMusica:estilo:listar"),
         excluir: (id) => ipcRenderer.invoke("lojaMusica:estilo:excluir", id),
         editar: (id, descricao) => ipcRenderer.invoke("lojaMusica:estilo:editar", {id, descricao})
+    },
+    artista:{
+        criar: (nome) => ipcRenderer.invoke("lojaMusica:estilo:criar", nome),
+        listar: () => ipcRenderer.invoke("lojaMusica:estilo:listar"),
+        excluir: (id) => ipcRenderer.invoke("lojaMusica:estilo:excluir", id),
+        editar: (id, nome) => ipcRenderer.invoke("lojaMusica:estilo:editar", {id, nome})        
+    },
+    gravadora:{
+        criar: (nome) => ipcRenderer.invoke("lojaMusica:estilo:criar", nome),
+        listar: () => ipcRenderer.invoke("lojaMusica:estilo:listar"),
+        excluir: (id) => ipcRenderer.invoke("lojaMusica:estilo:excluir", id),
+        editar: (id, nome) => ipcRenderer.invoke("lojaMusica:estilo:editar", {id, nome})        
     }
-
 })

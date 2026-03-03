@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const { eventNames } = require('node:cluster');
 const path = require('node:path')
 const sqlite = require('sqlite3').verbose();
+const serviceEstilos = require('./service/serviceEstilos')
  
 const db = new sqlite.Database(
     path.resolve('database', 'loja_musica.db'),
@@ -81,28 +82,25 @@ const createIpcMain = () => {
     }
   })
 
-  ipcMain.handle("lojaMusica:estilo:criar", (event, descricao) => {
-
-    console.log(">>> lojaMusica:estilo:criar >", descricao);
-    db.run(`INSERT INTO estilo (descricao) VALUES (?)`, [descricao]);
+  // É necessário passar "event" como um dos parâmetros pois a função handle armazena dados do evento nessa variável, que podem ser úteis depois.
+  ipcMain.handle("lojaMusica:estilo:criar", async (event, descricao) =>  {
+    //Estou passando a descrição pois exigi ela na criação do estilo
+    //Estou retornando {`id: this.lastID, descricao`} dessa maneira, retorno todo o objeto ao front 
+    return  await serviceEstilos.criar(descricao)
   })
 
-  ipcMain.handle("lojaMusica:estilo:listar", () => {
-
-    console.log(">>> lojaMusica:estilo:listar");
-    db.run(`SELECT * FROM estilo`);
+  ipcMain.handle("lojaMusica:estilo:listar", async (event) => {
+    return await serviceEstilos.listar()
   })
 
-  ipcMain.handle(`lojaMusica:estilo:excluir`, (event, id) => {
+  ipcMain.handle(`lojaMusica:estilo:excluir`, async (event, id) => {
 
-    console.log(">>> lojaMusica:estilo:excluir", id);
-    db.run(`DELETE FROM estilo WHERE estilo_id = (?)`, [id]);
+    return await serviceEstilos.excluir(id)
   })
 
-  ipcMain.handle("lojaMusica:estilo:editar", (event, {id, descricao}) => {
+  ipcMain.handle("lojaMusica:estilo:editar", async (event, {id, descricao}) => {
 
-    console.log(">>> lojaMusica:estilo:editar", id, descricao)
-    db.run(`UPDATE estilo SET descricao = (?) WHERE estilo_id = (?)`, [descricao, id])
+    return await serviceEstilos.editar(id, descricao)
   })
 }
 

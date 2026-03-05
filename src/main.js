@@ -4,6 +4,8 @@ const path = require('node:path')
 const sqlite = require('sqlite3').verbose();
 const registerEstiloHandler = require("./handlers/handlerEstilo");
 const registerArtistaHandler = require('./handlers/handlerArtista');
+const registerGravadoraHandler = require('./handlers/handlerGravadora');
+const registerMusicaHandler = require('./handlers/handlerMusica')
  
 const db = new sqlite.Database(
     path.resolve('database', 'loja_musica.db'),
@@ -93,5 +95,7 @@ app.whenReady().then(() => {
   createWindow()
   registerEstiloHandler();
   registerArtistaHandler(); 
+  registerGravadoraHandler();
+  registerMusicaHandler();
 })
 

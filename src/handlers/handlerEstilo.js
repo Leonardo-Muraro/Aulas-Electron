@@ -6,7 +6,8 @@ function registerEstiloHandler(){
   // É necessário passar "event" como um dos parâmetros pois a função handle armazena dados do evento nessa variável, que podem ser úteis depois.
   ipcMain.handle("lojaMusica:estilo:criar", async (event, descricao) =>  {
     //Estou passando a descrição pois exigi ela na criação do estilo
-    //Estou retornando {`id: this.lastID, descricao`} dessa maneira, retorno todo o objeto ao front 
+    //Estou retornando {`id: this.lastID, descricao`} dessa maneira, retorno todo o objeto ao front
+    //PRECISO PASSAR AWAIT PARA QUANDO CHAMADA A FUNÇÃO DO BACKEND, ESSA FUNÇÃO CHEGUE ATÉ O FINAL ANTES DE EXECUTAR ALGUMA OUTRA AÇÃO. 
     return  await serviceEstilo.criar(descricao)
   })
 

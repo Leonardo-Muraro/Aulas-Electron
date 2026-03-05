@@ -11,6 +11,8 @@ const db = new sqlite.Database(
         }
     }
 );
+
+db.run("PRAGMA foreign_keys = ON")
  
 db.run(`
     CREATE TABLE IF NOT EXISTS artista (

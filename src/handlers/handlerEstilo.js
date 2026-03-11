@@ -12,6 +12,7 @@ function registerEstiloHandler(){
   })
 
   ipcMain.handle("lojaMusica:estilo:listar", async (event) => {
+    console.log(serviceEstilo)
     return await serviceEstilo.listar()
   })
 

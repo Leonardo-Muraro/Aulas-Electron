@@ -6,19 +6,28 @@
     <title>Estilos Musicais</title>
 </head>
 <body>
+    <script src="../bootstrap-base.js"></script>
     <div id="display">
 
         <h1>Estilos musicais</h1>
 
-        <a href="./index.html">Home</a>
         <h1><a href="index.html">Loja de música</a></h1>
-        
-        <form action="">
-            <input type="text" name="estilo" id="estilo">
-            <button type="submit">Enviar</button>
-        </form>
 
-    </div>
+        <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalEstilo">
+            + Novo Estilo
+        </button>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-estilos-body">
+
+            </tbody>
+        </table>
     <script src="rendererEstilos.js"></script>
 </body>
 </html>

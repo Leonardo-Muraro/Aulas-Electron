@@ -61,6 +61,8 @@ const serviceEstilo = {
 
 
 
-}
+};
 
-module.export = serviceEstilo;
+
+console.log("Service Estilo carregado com sucesso!")
+module.exports = serviceEstilo;

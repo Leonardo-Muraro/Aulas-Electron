@@ -25,3 +25,5 @@ function registerMusicaHandler(){
     
 
 }
+
+module.exports = registerMusicaHandler;

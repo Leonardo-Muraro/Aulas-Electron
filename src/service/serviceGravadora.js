@@ -63,4 +63,4 @@ const serviceGravadora = {
 
 }
 
-module.export = serviceGravadora;
+module.exports = serviceGravadora;

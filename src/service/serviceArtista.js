@@ -63,4 +63,4 @@ const serviceArtista = {
 
 }
 
-module.export = serviceArtista;
+module.exports = serviceArtista;

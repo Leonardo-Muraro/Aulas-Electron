@@ -78,4 +78,4 @@ const serviceMusica = {
 }
 
 
-module.export = serviceMusica;
+module.exports = serviceMusica;

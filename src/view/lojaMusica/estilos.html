@@ -22,18 +22,18 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Adicionar Estilo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">                 
                     <form action="" class="display">
-                        <label for=""descricao>Digite o estilo que deseja adicionar</label>
+                        <label for="descricao">Digite o estilo que deseja adicionar</label>
                         <input type="text" id="descricao">
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" id="btnSalvar" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" id="btnSalvar" class="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
                 </div>
                 </div>
             </div>
@@ -48,13 +48,14 @@
                 </div>
                 <div class="modal-body">                 
                     <form action="" class="display">
-                        <label for=""descricao>Descrição</label>
-                        <input type="text" id="descricao">
+                        <input type="hidden" id="id_estilo_edit">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" id="descricao_edit">
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" id="btnSalvarEdit" class="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
                 </div>
                 </div>
             </div>

@@ -13,9 +13,52 @@
 
         <h1><a href="index.html">Loja de música</a></h1>
 
-        <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalEstilo">
+        <button type="button" id="novo_input" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modal_adicionar">
             + Novo Estilo
         </button>
+
+
+        <div class="modal fade center" tabindex="-1" id="modal_adicionar" aria-labelledby="modalAdicionar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">                 
+                    <form action="" class="display">
+                        <label for=""descricao>Digite o estilo que deseja adicionar</label>
+                        <input type="text" id="descricao">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="btnSalvar" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade center" tabindex="-1" id="modal_editar" aria-labelledby="modalEditar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">                 
+                    <form action="" class="display">
+                        <label for=""descricao>Descrição</label>
+                        <input type="text" id="descricao">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
         
         <table class="table table-hover">
             <thead>

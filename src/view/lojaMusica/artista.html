@@ -3,12 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artistas</title>
+    <title>Estilos Musicais</title>
 </head>
 <body>
-    
+    <script src="../bootstrap-base.js"></script>
+    <div id="display">
+
+        <h1>Artistas</h1>
+
+        <h1><a href="index.html">Loja de música</a></h1>
+
+        <button type="button" id="novo_input" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modal_adicionar">
+            + Novo Artista
+        </button>
 
 
+        <div class="modal fade center" tabindex="-1" id="modal_adicionar" aria-labelledby="modalAdicionar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Adicionar Artista</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">                 
+                    <form action="" class="display">
+                        <label for="artista_add">Digite o nome do novo Artista</label>
+                        <input type="text" id="artista_add">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" id="btnSalvar" class="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade center" tabindex="-1" id="modal_editar" aria-labelledby="modalEditar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">                 
+                    <form action="" class="display">
+                        <input type="hidden" id="id_artista_edit">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" id="nome_edit">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" id="btnSalvarEdit" class="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-artista-body">
+
+            </tbody>
+        </table>
     <script src="rendererArtista.js"></script>
 </body>
 </html>

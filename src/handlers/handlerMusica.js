@@ -10,17 +10,17 @@ function registerMusicaHandler(){
     
     ipcMain.handle("lojaMusica:musica:listar", async (event) =>{
 
-        return await serviceMusica.criar()
+        return await serviceMusica.listar()
     })
 
     ipcMain.handle("lojaMusica:musica:editar", async (event, {nome, data_lancamento, duracao, estilo_id, musica_id}) =>{
 
-        return await serviceMusica.criar(nome, data_lancamento, duracao, estilo_id, musica_id)
+        return await serviceMusica.editar(nome, data_lancamento, duracao, estilo_id, musica_id)
     })
 
     ipcMain.handle("lojaMusica:musica:excluir", async (event, musica_id) =>{
 
-        return await serviceMusica.criar(musica_id)
+        return await serviceMusica.excluir(musica_id)
     })
     
 

@@ -3,9 +3,9 @@ const serviceMusica = require("../service/serviceMusica") //importamos nosso arq
 
 function registerMusicaHandler(){
 
-    ipcMain.handle("lojaMusica:musica:criar", async (event, {nome, data_lancamento, duracao, estilo_id}) =>{
+    ipcMain.handle("lojaMusica:musica:criar", async (event, {nome, duracao, data_lancamento, estilo_id}) =>{
 
-        return await serviceMusica.criar(nome, data_lancamento, duracao, estilo_id)
+        return await serviceMusica.criar(nome, duracao, data_lancamento, estilo_id)
     })
     
     ipcMain.handle("lojaMusica:musica:listar", async (event) =>{
@@ -13,9 +13,9 @@ function registerMusicaHandler(){
         return await serviceMusica.listar()
     })
 
-    ipcMain.handle("lojaMusica:musica:editar", async (event, {nome, data_lancamento, duracao, estilo_id, musica_id}) =>{
+    ipcMain.handle("lojaMusica:musica:editar", async (event, {nome, duracao, data_lancamento, estilo_id, musica_id}) =>{
 
-        return await serviceMusica.editar(nome, data_lancamento, duracao, estilo_id, musica_id)
+        return await serviceMusica.editar(nome, duracao, data_lancamento, estilo_id, musica_id)
     })
 
     ipcMain.handle("lojaMusica:musica:excluir", async (event, musica_id) =>{

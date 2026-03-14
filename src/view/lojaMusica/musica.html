@@ -68,21 +68,24 @@
                     <form action="" class="display">
 
                         <input type="hidden" id="id_musica_edit">
-
-                        <label for="musica_nome_edit">Nome</label>
-                        <input type="text" name="nome_edit" id="musica_nome_edit">
-
-                        <label for="musica_duracao_edit">Duração</label>
-                        <input type="text" name="duracao_edit" id="musica_duracao_edit">
-
-                        <label for="musica_dataLanc_edit">Data de lançamento</label>
-                        <input type="date" name="dataLancamento_edit" id="musica_dataLanc_edit">
-
-                        <label for="musica_estilo_edit">Estilo musical</label>
-                        <select name="musica_estilo_edit" id="musica_estilo_edit">
-                            <option value="" selected disabled>Selecione um Estilo.</option>
-                        </select>
-
+                        <div class="mb-3">
+                            <label for="musica_nome_edit">Nome</label>
+                            <input type="text" name="nome_edit" id="musica_nome_edit">
+                        </div>
+                        <div class="mb-3">
+                            <label for="musica_duracao_edit">Duração</label>
+                            <input type="text" name="duracao_edit" id="musica_duracao_edit">
+                        </div>
+                        <div class="mb-3">
+                            <label for="musica_dataLanc_edit">Data de lançamento</label>
+                            <input type="date" name="dataLancamento_edit" id="musica_dataLanc_edit">
+                        </div>
+                        <div class="mb-3">
+                            <label for="musica_estilo_edit">Estilo musical</label>
+                            <select name="musica_estilo_edit" id="musica_estilo_edit">
+                                <option value="" selected disabled>Selecione um Estilo.</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -100,6 +103,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Duração</th>
                     <th scope="col">Data de lançamento</th>
+                    <th scope="col">Estilo</th>
                 </tr>
             </thead>
             <tbody id="tabela-musica-body">
